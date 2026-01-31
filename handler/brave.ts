@@ -8,13 +8,13 @@ export const handleSearch = async (query: string) => {
   }
 
   const excludeSites =
-    "NOT site:youtube.com NOT site:tiktok.com NOT site:reddit.com NOT site:amazon.com";
+    "NOT site:youtube.com NOT site:tiktok.com NOT site:reddit.com NOT site:amazon.com NOT site:wikipedia.org";
   const enhancedQuery = `${query} ${excludeSites}`;
 
   const response = await fetch(
     `https://api.search.brave.com/res/v1/web/search?${new URLSearchParams({
       q: enhancedQuery,
-      count: "5",
+      count: "2",
       country: "us",
       search_lang: "en",
     })}`,
