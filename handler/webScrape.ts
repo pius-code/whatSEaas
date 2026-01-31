@@ -1,5 +1,3 @@
-import { firecrawl } from "../core/firecrawl";
-
 const webScrape = async (urls: string[]) => {
   const response = await Promise.all(
     urls.map((url) =>

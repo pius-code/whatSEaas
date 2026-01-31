@@ -14,7 +14,7 @@ export const handleSearch = async (query: string) => {
   const response = await fetch(
     `https://api.search.brave.com/res/v1/web/search?${new URLSearchParams({
       q: enhancedQuery,
-      count: "3",
+      count: "5",
       country: "us",
       search_lang: "en",
     })}`,
