@@ -1,3 +1,5 @@
+import { firecrawl } from "../core/firecrawl";
+
 const webScrape = async (urls: string[]) => {
   const response = await Promise.all(
     urls.map((url) =>
@@ -11,7 +13,7 @@ const webScrape = async (urls: string[]) => {
   const cleanTexts = await Promise.all(
     response.map((response) => response.text()),
   );
-  const limitedTexts = cleanTexts.map((text) => text.slice(0, 3000));
+  const limitedTexts = cleanTexts.map((text) => text.slice(2000, 5000));
   console.log("Scraped texts:", limitedTexts);
   return limitedTexts;
 };
