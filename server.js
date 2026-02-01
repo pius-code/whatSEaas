@@ -14,6 +14,6 @@ client.on("message", async (message) => {
     // const urls = await getUrls(response);
     // console.log("Extracted URLs:", urls);
     // webScrape(urls);
-    const aiResponse = await LLMHandler(message.body);
+    const aiResponse = await LLMHandler(message);
   }
 });
