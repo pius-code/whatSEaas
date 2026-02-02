@@ -8,12 +8,15 @@ import { LLMHandler } from "./handler/groq";
 initializeWhatsApp();
 
 client.on("message", async (message) => {
+  // change thse number to your  whatsapp number
   if (message.from === "233536287642@c.us") {
-    console.log("Received message from authorized user:", message.body);
+    // uncomment to enable search and scraping
     // const response = await handleSearch(message.body);
     // const urls = await getUrls(response);
     // console.log("Extracted URLs:", urls);
     // webScrape(urls);
+
+    // uses groq search instead of scraping + search + LLM summary
     const aiResponse = await LLMHandler(message);
   }
 });
